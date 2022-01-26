@@ -16,8 +16,6 @@ npm install @ruleenginejs/runtime
 
 ## Usage
 
-### Config
-
 ```js
 // rollup.config.js
 import rule from '@ruleenginejs/rollup-plugin-rule';
