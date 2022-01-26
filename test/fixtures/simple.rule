@@ -1,0 +1,76 @@
+{
+  "steps": [
+    {
+      "id": 2,
+      "type": "start",
+      "name": "Start",
+      "ports": {
+        "in": [
+          "default"
+        ],
+        "out": [
+          "default"
+        ]
+      },
+      "canvas": {
+        "position": [
+          -501.5,
+          -119.5
+        ]
+      },
+      "connect": [
+        {
+          "stepId": 5,
+          "srcOutPort": "default",
+          "dstInPort": "default"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "name": "New Step",
+      "ports": {
+        "in": [
+          "default"
+        ],
+        "out": [
+          "default"
+        ]
+      },
+      "handlerFile": "./new-step.js",
+      "canvas": {
+        "position": [
+          -381.5,
+          -206.5
+        ]
+      },
+      "connect": [
+        {
+          "stepId": 8,
+          "srcOutPort": "default",
+          "dstInPort": "default"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "end",
+      "name": "End",
+      "ports": {
+        "in": [
+          "default"
+        ],
+        "out": [
+          "default"
+        ]
+      },
+      "canvas": {
+        "position": [
+          -90.5,
+          -108.5
+        ]
+      }
+    }
+  ]
+}

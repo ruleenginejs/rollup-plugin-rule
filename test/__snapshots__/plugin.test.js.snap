@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rollup-plugin-rule should output compiled rule 1`] = `
+"'use strict';
+
+const {
+  SingleStep,
+  CompositeStep,
+  StartStep,
+  EndStep,
+  ErrorStep,
+  Pipeline
+} = require(\\"@ruleenginejs/runtime\\");
+
+const pipeline = new Pipeline();
+const startStep_1 = new StartStep({
+  id: 2,
+  name: \\"Start\\",
+  ports: {
+    in: [\\"default\\"],
+    out: [\\"default\\"]
+  }
+});
+const singleStep_2 = new SingleStep({
+  id: 5,
+  name: \\"New Step\\",
+  handler: require(\\"./new-step.js\\"),
+  ports: {
+    in: [\\"default\\"],
+    out: [\\"default\\"]
+  }
+});
+const endStep_3 = new EndStep({
+  id: 8,
+  name: \\"End\\",
+  ports: {
+    in: [\\"default\\"],
+    out: [\\"default\\"]
+  }
+});
+startStep_1.connectTo(singleStep_2, \\"default\\", \\"default\\");
+singleStep_2.connectTo(endStep_3, \\"default\\", \\"default\\");
+pipeline.add(startStep_1, singleStep_2, endStep_3);
+module.exports = pipeline;
+"
+`;
+
+exports[`rollup-plugin-rule should throw error when bad rule schema 1`] = `"Schema invalid: [{\\"instancePath\\":\\"\\",\\"schemaPath\\":\\"#/required\\",\\"keyword\\":\\"required\\",\\"params\\":{\\"missingProperty\\":\\"steps\\"},\\"message\\":\\"must have required property 'steps'\\"}]"`;
