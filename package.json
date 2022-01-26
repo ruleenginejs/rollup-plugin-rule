@@ -31,7 +31,6 @@
   },
   "keywords": [
     "ruleengine",
-    "webpack",
     "rollup-plugin"
   ],
   "author": "Nikolay Naumenkov",
