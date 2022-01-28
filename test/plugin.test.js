@@ -5,7 +5,7 @@ const rule = require('../');
 const fixturesDir = path.resolve(__dirname, 'fixtures');
 
 describe('rollup-plugin-rule', () => {
-  it('should output compiled rule', async () => {
+  it('should output compiled rule in es module', async () => {
     const output = await build('basic.js');
     expect(output).toMatchSnapshot();
   });
@@ -25,6 +25,7 @@ describe('rollup-plugin-rule', () => {
 async function build(file) {
   const bundle = await rollup({
     input: path.join(fixturesDir, file),
+    external: ["@ruleenginejs/runtime"],
     plugins: [
       rule()
     ]

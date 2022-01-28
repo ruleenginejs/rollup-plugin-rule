@@ -1,3 +1,3 @@
-module.exports = (context, next) => {
+export default (context, next) => {
   next();
 }

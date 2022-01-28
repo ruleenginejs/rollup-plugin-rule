@@ -1,19 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`rollup-plugin-rule should output compiled rule 1`] = `
+exports[`rollup-plugin-rule should output compiled rule in es module 1`] = `
 "'use strict';
 
-const {
-  SingleStep,
-  CompositeStep,
-  StartStep,
-  EndStep,
-  ErrorStep,
-  Pipeline
-} = require(\\"@ruleenginejs/runtime\\");
+var runtime = require('@ruleenginejs/runtime');
 
-const pipeline = new Pipeline();
-const startStep_1 = new StartStep({
+var handler_3 = (context, next) => {
+  next();
+};
+
+const pipeline = new runtime.Pipeline();
+const startStep_1 = new runtime.StartStep({
   id: 2,
   name: \\"Start\\",
   ports: {
@@ -21,16 +18,16 @@ const startStep_1 = new StartStep({
     out: [\\"default\\"]
   }
 });
-const singleStep_2 = new SingleStep({
+const singleStep_2 = new runtime.SingleStep({
   id: 5,
   name: \\"New Step\\",
-  handler: require(\\"./new-step.js\\"),
+  handler: handler_3,
   ports: {
     in: [\\"default\\"],
     out: [\\"default\\"]
   }
 });
-const endStep_3 = new EndStep({
+const endStep_4 = new runtime.EndStep({
   id: 8,
   name: \\"End\\",
   ports: {
@@ -39,9 +36,10 @@ const endStep_3 = new EndStep({
   }
 });
 startStep_1.connectTo(singleStep_2, \\"default\\", \\"default\\");
-singleStep_2.connectTo(endStep_3, \\"default\\", \\"default\\");
-pipeline.add(startStep_1, singleStep_2, endStep_3);
-module.exports = pipeline;
+singleStep_2.connectTo(endStep_4, \\"default\\", \\"default\\");
+pipeline.add(startStep_1, singleStep_2, endStep_4);
+
+pipeline.execute();
 "
 `;
 

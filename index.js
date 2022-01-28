@@ -9,6 +9,8 @@ module.exports = function rule(options = {}) {
 
   const checkSchema = options.checkSchema === undefined || !!options.checkSchema;
   const runtimeModule = options.runtimeModule || defaultRuntimeModule;
+  const moduleBaseDir = options.moduleBaseDir;
+  const esModule = options.esModule === undefined || !!options.esModule;
 
   return {
     name: 'rule',
@@ -29,7 +31,9 @@ module.exports = function rule(options = {}) {
       }
 
       const generatedCode = generateCode(data, {
-        runtimeModule
+        runtimeModule,
+        baseDir: moduleBaseDir,
+        esModule
       });
 
       return {
