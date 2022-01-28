@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^4.1.2",
-    "@ruleenginejs/compiler": "^1.0.3",
-    "@ruleenginejs/schema": "^1.0.3"
+    "@ruleenginejs/compiler": "^1.0.4",
+    "@ruleenginejs/schema": "^1.0.4"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
