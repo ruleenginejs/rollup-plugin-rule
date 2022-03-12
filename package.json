@@ -1,6 +1,6 @@
 {
   "name": "@ruleenginejs/rollup-plugin-rule",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Rollup plugin for compile rule files",
   "main": "index.js",
   "types": "index.d.ts",
