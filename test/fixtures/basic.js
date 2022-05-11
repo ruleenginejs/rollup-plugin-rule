@@ -1,2 +1,2 @@
-import rule from "./simple.rule";
+import rule from './simple.rule';
 rule.execute();

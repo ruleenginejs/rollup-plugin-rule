@@ -25,10 +25,8 @@ describe('rollup-plugin-rule', () => {
 async function build(file) {
   const bundle = await rollup({
     input: path.join(fixturesDir, file),
-    external: ["@ruleenginejs/runtime"],
-    plugins: [
-      rule()
-    ]
+    external: ['@ruleenginejs/runtime'],
+    plugins: [rule()]
   });
   const { output } = await bundle.generate({ format: 'cjs' });
   return output[0].code;

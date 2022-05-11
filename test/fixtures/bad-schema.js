@@ -1,2 +1,2 @@
-import badSchema from "./bad-schema.rule";
+import badSchema from './bad-schema.rule';
 badSchema.execute();

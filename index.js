@@ -7,7 +7,8 @@ const defaultRuntimeModule = '@ruleenginejs/runtime';
 module.exports = function rule(options = {}) {
   const filter = createFilter(options.include || '**/*.rule', options.exclude);
 
-  const checkSchema = options.checkSchema === undefined || !!options.checkSchema;
+  const checkSchema =
+    options.checkSchema === undefined || !!options.checkSchema;
   const runtimeModule = options.runtimeModule || defaultRuntimeModule;
   const moduleBaseDir = options.moduleBaseDir;
   const esModule = options.esModule === undefined || !!options.esModule;
@@ -39,7 +40,7 @@ module.exports = function rule(options = {}) {
       return {
         code: generatedCode,
         map: { mappings: '' }
-      }
+      };
     }
-  }
+  };
 };
