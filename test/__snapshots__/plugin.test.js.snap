@@ -12,35 +12,35 @@ var handler_3 = (context, next) => {
 const pipeline = new runtime.Pipeline();
 const startStep_1 = new runtime.StartStep({
   id: 2,
-  name: \\"Start\\",
+  name: "Start",
   ports: {
-    in: [\\"default\\"],
-    out: [\\"default\\"]
+    in: ["default"],
+    out: ["default"]
   }
 });
 const singleStep_2 = new runtime.SingleStep({
   id: 5,
-  name: \\"New Step\\",
+  name: "New Step",
   handler: handler_3,
   ports: {
-    in: [\\"default\\"],
-    out: [\\"default\\"]
+    in: ["default"],
+    out: ["default"]
   }
 });
 const endStep_4 = new runtime.EndStep({
   id: 8,
-  name: \\"End\\",
+  name: "End",
   ports: {
-    in: [\\"default\\"],
-    out: [\\"default\\"]
+    in: ["default"],
+    out: ["default"]
   }
 });
-startStep_1.connectTo(singleStep_2, \\"default\\", \\"default\\");
-singleStep_2.connectTo(endStep_4, \\"default\\", \\"default\\");
+startStep_1.connectTo(singleStep_2, "default", "default");
+singleStep_2.connectTo(endStep_4, "default", "default");
 pipeline.add(startStep_1, singleStep_2, endStep_4);
 
 pipeline.execute();
 "
 `;
 
-exports[`rollup-plugin-rule should throw error when bad rule schema 1`] = `"Schema invalid: [{\\"instancePath\\":\\"\\",\\"schemaPath\\":\\"#/required\\",\\"keyword\\":\\"required\\",\\"params\\":{\\"missingProperty\\":\\"steps\\"},\\"message\\":\\"must have required property 'steps'\\"}]"`;
+exports[`rollup-plugin-rule should throw error when bad rule schema 1`] = `"Schema invalid: [{"instancePath":"","schemaPath":"#/required","keyword":"required","params":{"missingProperty":"steps"},"message":"must have required property 'steps'"}]"`;
