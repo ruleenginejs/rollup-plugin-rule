@@ -13,13 +13,12 @@
     "format": "prettier --write \"**/*.{js,ts}\"",
     "lint": "eslint \"**/*.js\" --fix",
     "postversion": "npm run push",
-    "push": "git push origin master --tags",
-    "prepare": "husky install"
+    "push": "git push origin master --tags"
   },
   "dependencies": {
     "@rollup/pluginutils": "^4.2.1",
-    "@ruleenginejs/compiler": "^1.0.5",
-    "@ruleenginejs/schema": "^1.0.5"
+    "@ruleenginejs/compiler": "^1.0.6",
+    "@ruleenginejs/schema": "^1.0.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
